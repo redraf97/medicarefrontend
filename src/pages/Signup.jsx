@@ -1,9 +1,13 @@
-import { useState, useRef } from "react";
+import {
+  useState,
+  //useref
+} from "react";
 import { Link } from "react-router-dom";
-import "react-phone-number-input/style.css";
-import PhoneInput2 from "react-phone-input-2";
-import PhoneInput from "react-phone-number-input";
+//import "react-phone-number-input/style.css";
+//import PhoneInput2 from "react-phone-input-2";
+//import PhoneInput from "react-phone-number-input";
 //import 'react-phone-input-2/lib/style.css'
+
 import { HiOutlineEye, HiEyeOff } from "react-icons/hi";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,7 +21,8 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  let passwordRef = useRef();
+  const [address, setAddress] = useState("");
+  //let passwordRef = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,6 +44,7 @@ function Signup() {
         email,
         phone,
         password,
+        address,
       })
       .then((response) => {
         console.log(response.data.message);
@@ -62,11 +68,11 @@ function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-blur py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-center bg-blur py-1 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-darkGreen1">
               Sign Up
             </h2>
           </div>
@@ -83,7 +89,7 @@ function Signup() {
                 onChange={(e) => setFirstName(e.target.value)}
                 required
                 /*className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"*/
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="First Name"
               />
             </div>
@@ -98,7 +104,7 @@ function Signup() {
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Last Name"
               />
             </div>
@@ -113,31 +119,61 @@ function Signup() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="appearance-none my-1 relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Email"
               />
             </div>
-            <div>
-              <input
-                type="tel"
-                pattern="^\(\d{3}\) \d{3}-\d{4}$"
-                required
-                className="appearance-none my-1 relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
-                placeholder="Enter phone number"
-              />
-            </div>
-            {/* <PhoneInput
+            {/*<PhoneInput
                 placeholder="Enter phone number"
                 value={phone}
                 onChange={setPhone}
-                  className="appearance-none my-1 relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
-              />*/}
-            {/* <PhoneInput2
-              country={"us"}
+                  className="appearance-none my-1 relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+               />*/}
+            {/*<PhoneInput
+              placeholder="Enter phone number"
               value={phone}
-              className="appearance-none my-1 relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              onChange={(phone) => setPhone({ phone })}
+              onChange={setPhone}
+              international
+              defaultCountry="DZ"
+              className="border-b-darkGreen2 focus-ring-darkGreen2 focus-border-darkGreen2 mb-4 react-phone-number-input"
             />*/}
+            <div>
+              <label htmlFor="phone" className="sr-only">
+                Phone Number
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                type="text"
+                value={phone}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                }}
+                onBlur={(e) => {
+                  const phoneRegex = /^0[5-7]\d{8}$/;
+                  if (!phoneRegex.test(e.target.value)) {
+                    alert("Invalid phone number");
+                  }
+                }}
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                placeholder="Phone Number"
+              />
+            </div>
+            <div>
+              <label htmlFor="address" className="sr-only">
+                Address
+              </label>
+              <input
+                id="address"
+                name="address"
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                required
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                placeholder="Address"
+              />
+            </div>
 
             <div className="relative">
               <label htmlFor="password" className="sr-only">
@@ -150,22 +186,22 @@ function Signup() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Password"
               />
               <div
-                className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                className="absolute inset-y-1 right-0 pr-3 flex items-center cursor-pointer"
                 style={{ zIndex: 20 }}
                 onClick={() => setIsPasswordVisible(!isPasswordVisible)}
               >
                 {isPasswordVisible ? (
                   <HiOutlineEye
-                    className="w-8 h-10 text-gray-400 absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                    className="w-8 h-10 text-gray-400 absolute inset-y-1 right-0 pr-3 flex items-center cursor-pointer"
                     onClick={() => setIsPasswordVisible(!isPasswordVisible)}
                   />
                 ) : (
                   <HiEyeOff
-                    className="w-8 h-10 text-gray-400 absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                    className="w-8 h-10 text-gray-400 absolute inset-y-1 right-0 pr-3 flex items-center cursor-pointer"
                     onClick={() => setIsPasswordVisible(!isPasswordVisible)}
                   />
                 )}
@@ -182,29 +218,57 @@ function Signup() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Confirm Password"
               />
             </div>
           </div>
+          <div className="flex items-center">
+            <input type="checkbox" className="mr-2 mb-6" />
+            <p>
+              By signing up, you agree to our{" "}
+              <Link
+                to="/terms"
+                className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline"
+              >
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link
+                to="/privacy"
+                className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline"
+              >
+                Privacy Policy
+              </Link>
+            </p>
+          </div>
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primaryColor hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-darkGreen2 hover:bg-greenHover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-greenHover"
             >
               Sign Up
             </button>
           </div>
         </form>
 
-        <div className="text-center text-sm">
+        <div className="font-medium text-center text-sm ">
           <p>
             Already have an account?{" "}
             <Link
               to="/login"
-              className="font-medium text-indigo-600 hover:text-indigo-500"
+              className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline" 
             >
-              Sign In
+              Login
+            </Link>
+          </p>
+          <p>
+            Are you a practitioner?{" "}
+            <Link
+              to="/Type"
+              className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline"
+            >
+              Sign up here
             </Link>
           </p>
         </div>
