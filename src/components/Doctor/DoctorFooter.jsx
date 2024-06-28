@@ -7,12 +7,12 @@ const DoctorFooter = () => {
   const navLinks = [
     {
       title: 'Settings',
-      path: '/settings',
+      path: '/Doctor-settings',
       icon: <FontAwesomeIcon icon={faCog} />,
     },
     {
       title: 'History',
-      path: '/history',
+      path: '/Doctor-history',
       icon: <FontAwesomeIcon icon={faHistory} />,
     },
     {

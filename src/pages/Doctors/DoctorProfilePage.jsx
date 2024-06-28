@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import DoctorLayout from '../../Layout/DoctorLayout';
 import DoctorInfo from '../../components/Doctor/DoctorInfo';
 import SetAvailability from '../../components/Doctor/SetAvailability';
 import AvailabilityItem from '../../components/Doctor/AvailabilityItem';
 import Modal from '../../components/Doctor/Modal';
 import Swal from 'sweetalert2';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import DoctorLayout from '../../Layout/DoctorLayout'; // Importation de DoctorLayout
 
 const DoctorProfilePage = () => {
   const [doctorInfo, setDoctorInfo] = useState({
     id: 1,
-    name: 'Dr. John Doe',
+    name: 'Dr. omar',
     specialty: 'Cardiology',
     image: 'https://via.placeholder.com/150',
     availability: [],
@@ -23,31 +24,38 @@ const DoctorProfilePage = () => {
     { day: 'Tuesday', startTime: '10:00', endTime: '15:00', workDuration: 30 },
     { day: 'Wednesday', startTime: '09:00', endTime: '13:00', workDuration: 30 },
   ]);
-  
+
   const [selectedDay, setSelectedDay] = useState(null);
   const [showAvailabilityForm, setShowAvailabilityForm] = useState(false);
   const [deleteMode, setDeleteMode] = useState(false);
 
   const [appointments, setAppointments] = useState([
-    { day: 'Monday', patientName: 'John Smith', time: '09:00' },
-    { day: 'Monday', patientName: 'Jane Doe', time: '10:00' },
-    { day: 'Tuesday', patientName: 'Jim Beam', time: '11:00' },
+    { day: 'Monday', patientName: 'samir belkher', time: '09:00' },
+    { day: 'Monday', patientName: 'chikh l3an9a', time: '10:00' },
+    { day: 'Tuesday', patientName: 'guerouabi lhachemi', time: '11:00' },
   ]);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
+    const token = localStorage.getItem('token');
+
     const fetchDoctorInfo = () => {
-      axios.get('http://localhost:3000/api/doctors/1')
-        .then(response => {
-          setDoctorInfo(response.data);
-          setAvailableDates(response.data.availability || []);
-        })
-        .catch(error => {
-          console.error('Error fetching doctor info:', error);
-        });
+      axios.get('http://localhost:3000/api/doctors/1', {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then(response => {
+        setDoctorInfo(response.data);
+        setAvailableDates(response.data.availability || []);
+      })
+      .catch(error => {
+        console.error('Error fetching doctor info:', error);
+        toast.error('Failed to fetch doctor information');
+      });
     };
 
     fetchDoctorInfo();
-  }, []);
+  }, [navigate]);
 
   const handleAddAvailability = (newAvailability) => {
     setAvailableDates([...availableDates, newAvailability]);
@@ -66,24 +74,23 @@ const DoctorProfilePage = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:3000/api/doctors/1/availability/${day}`)
-          .then(() => {
-            const updatedDates = availableDates.filter(availability => availability.day !== day);
-            setAvailableDates(updatedDates);
-            if (selectedDay === day) {
-              setSelectedDay(null);
-              setAppointments([]);
-            }
-            Swal.fire(
-              'Deleted!',
-              'Your availability has been deleted.',
-              'success'
-            );
-          })
-          .catch(error => {
-            console.error('Error deleting availability:', error);
-            toast.error('Failed to delete availability');
-          });
+        const token = localStorage.getItem('token');
+        axios.delete(`http://localhost:3000/api/doctors/1/availability/${day}`, {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+        .then(() => {
+          const updatedDates = availableDates.filter(availability => availability.day !== day);
+          setAvailableDates(updatedDates);
+          if (selectedDay === day) {
+            setSelectedDay(null);
+            setAppointments([]);
+          }
+          Swal.fire('Deleted!', 'Your availability has been deleted.', 'success');
+        })
+        .catch(error => {
+          console.error('Error deleting availability:', error);
+          toast.error('Failed to delete availability');
+        });
       }
     });
   };
