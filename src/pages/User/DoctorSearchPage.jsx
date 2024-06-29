@@ -52,7 +52,7 @@ const DoctorSearchPage = () => {
     setShowModal(true);
   };
 
-  const handleAppointmentSubmit = () => {
+  {/*const handleAppointmentSubmit = () => {
     const token = localStorage.getItem('token');
     axios.post('http://localhost:3000/api/appointments', {
       doctorId: appointmentDoctor.id,
@@ -69,7 +69,7 @@ const DoctorSearchPage = () => {
     .catch(error => {
       console.error('Error booking appointment', error);
     });
-  };
+  };*/}
 
   const filteredDoctors = doctors.filter(doctor =>
     doctor.name.toLowerCase().includes(searchTerm.toLowerCase())

@@ -31,9 +31,9 @@ const Home = () => {
   return (
     <div className="container mx-auto px-4 py-8 bg-creme2 min-h-screen">
       <div className="flex items-center space-x-4">
-        <img src="/path-to-avatar.png" alt="Avatar" className="w-16 h-16 rounded-full"/>
+        <img src="/src/assets/images/avatar-icon.png" alt="Avatar" className="w-16 h-16 rounded-full"/>
         <div>
-          <h2 className="text-xl font-bold text-darkGreen1">Hi {user.firstName} {user.lastName}</h2>
+          <h2 className="text-xl font-bold text-darkGreen1">Hi {user.firstName || 'guest'} {user.lastName || ''}</h2>
           <p className="text-darkGreen4">How is your health?</p>
         </div>
       </div>

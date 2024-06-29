@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import DoctorSearchPage from '../pages/User/DoctorSearchPage';
 import UserMessagesPage from "../pages/User/UserMessagesPage";
 import PharmacySelectionPage from '../pages/PharmacySelectionPage';
+import LandingPage from '../pages/LandingPage';
 
 // Nurse 
 import NurseInfosPage from '../pages/Nurses/NurseInfosPage';
@@ -14,6 +15,8 @@ import acceptingWork from '../pages/Nurses/nurseWorkPages/acceptingWork';
 import NurseWorkLayout from '../Layout/nurse profile/NurseWorkLayout';
 import RecievingRequest from '../pages/Nurses/nurseWorkPages/RecievingRequest';
 import EndWork from '../pages/Nurses/nurseWorkPages/EndWork';
+import NurseMessage from '../pages/Nurses/NurseMessage';
+import NurseParametersPage from '../pages/Nurses/NurseParameters';
 
 // User
 import UserLayout from '../Layout/UserLayout';
@@ -35,18 +38,21 @@ import HistoryPage from '../pages/Doctors/HistoryPage';
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/" element={<DirectionPage />} />
+      <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Signup />} />
       <Route path="/pharmacy-selection" element={<UserLayout><PharmacySelectionPage /></UserLayout>} />
 
       {/* Nurse */}
-      <Route path="/Nurse-Home" element={<NurseWorkLayout><Home /></NurseWorkLayout>} />
       <Route path="/Nurse-Profile" element={<NurseWorkLayout><NurseInfosPage /></NurseWorkLayout>} />
       <Route path="/Nurse-work" element={<NurseWorkLayout><NurseWorkPage /></NurseWorkLayout>} />
       <Route path="/Nurse-recieving" element={<NurseWorkLayout><RecievingRequest /></NurseWorkLayout>} />
       <Route path="/Nurse-accepting" element={<NurseWorkLayout><acceptingWork /></NurseWorkLayout>} />
       <Route path="/Nurse-endWork" element={<NurseWorkLayout><EndWork /></NurseWorkLayout>} />
+      <Route path="/Nurse-messages" element={<NurseWorkLayout><NurseMessage /></NurseWorkLayout>} />
+      <Route path="/Nurse-parameters" element={<NurseWorkLayout><NurseParametersPage /></NurseWorkLayout>} />
+
+
 
       {/* User */}
       <Route path="/User-Home" element={<UserLayout><Home /></UserLayout>} />

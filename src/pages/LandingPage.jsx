@@ -1,56 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import TopHome from '../components/all/home/TopHome';
+import Services from '../components/all/home/Service';
+import Specialities from '../components/all/home/Specialities';
+import { Link } from 'react-router-dom';
+import { faStethoscope, faUserNurse, faPrescriptionBottleMedical, faSyringe } from '@fortawesome/free-solid-svg-icons';
 
 const LandingPage = () => {
-  const [user, setUser] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: ''
-  });
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-      axios.get('http://localhost:3000/api/user-profile', {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      .then(response => {
-        setUser(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching user data', error);
-      });
-
-  }, [navigate]);
-
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold">Welcome, {user.firstName} {user.lastName}</h2>
-      <div className="mt-4 space-y-4">
-        <p>Here are some options you can explore:</p>
-        <div className="flex flex-col space-y-4">
-          <Link to="/user-profile" className="btn">
-            View Profile
+    <div className="min-h-screen bg-creme2 flex flex-col justify-between">
+      <Header />
+
+      <div className="flex-grow">
+        <div className="w-full pl-6 pt-16 pb-[70px]">
+          <div className="top">
+            <TopHome />
+          </div>
+          
+          <div className="mt-8">
+        <h3 className="text-lg font-semibold text-darkGreen2">Services</h3>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
+          <Link to="/login" className="bg-lightGreen text-darkGreen1 p-4 rounded shadow-md hover:bg-greenHover">
+            <h4 className="font-bold">Medicine</h4>
+            <p>Reserve your day with the best services now</p>
           </Link>
-          <Link to="/user-asking" className="btn">
-            Request a Nurse
+          <Link to="/login" className="bg-lightGreen text-darkGreen1 p-4 rounded shadow-md hover:bg-greenHover">
+            <h4 className="font-bold">Nursing</h4>
+            <p>Care services provided at home</p>
           </Link>
-          <Link to="/user-map" className="btn">
-            Set Your Position
-          </Link>
-          <Link to="/user-result" className="btn">
-            View Nurse Results
-          </Link>
-          <Link to="/user-accepted" className="btn">
-            View Accepted Services
+          <Link to="/login" className="bg-lightGreen text-darkGreen1 p-4 rounded shadow-md hover:bg-greenHover">
+            <h4 className="font-bold">Pharmacy</h4>
+            <p>Get your medications delivered to your door</p>
           </Link>
         </div>
       </div>
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 };
