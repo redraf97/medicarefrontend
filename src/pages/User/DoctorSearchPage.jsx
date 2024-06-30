@@ -77,8 +77,8 @@ const DoctorSearchPage = () => {
 
   // Default doctor component
   const defaultDoctor = {
-    profileImage: '/path-to-avatar.png',
-    name: 'Dr. yasuo',
+    profileImage: '/src/assets/images/avtr.png',
+    name: 'Dr. Zemouri Slim',
     specialty: 'General Medicine',
     hospital: 'Default Hospital',
     rating: 4.5,

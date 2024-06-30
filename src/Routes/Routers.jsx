@@ -34,6 +34,7 @@ import MapPage from '../pages/User/MapPage';
 import DoctorProfilePage from '../pages/Doctors/DoctorProfilePage';
 import SettingsPage from '../pages/Doctors/SettingsPage';
 import HistoryPage from '../pages/Doctors/HistoryPage';
+import PractitionerSignupPage from '../pages/PractitionerSignupPage';
 
 const Routers = () => {
   return (
@@ -41,6 +42,7 @@ const Routers = () => {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Signup />} />
+      <Route path="/register-prac" element={<PractitionerSignupPage />} />
       <Route path="/pharmacy-selection" element={<UserLayout><PharmacySelectionPage /></UserLayout>} />
 
       {/* Nurse */}

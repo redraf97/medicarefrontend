@@ -13,9 +13,9 @@ import Swal from 'sweetalert2';
 const DoctorProfilePage = () => {
   const [doctorInfo, setDoctorInfo] = useState({
     id: 1,
-    name: 'Dr. omar',
+    name: 'Dr. Zemouri Slim',
     specialty: 'Cardiology',
-    image: 'https://via.placeholder.com/150',
+    image: '/src/assets/images/avtr.png',
     availability: [],
   });
 
@@ -30,9 +30,9 @@ const DoctorProfilePage = () => {
   const [deleteMode, setDeleteMode] = useState(false);
 
   const [appointments, setAppointments] = useState([
-    { day: 'Monday', patientName: 'samir belkher', time: '09:00' },
-    { day: 'Monday', patientName: 'chikh l3an9a', time: '10:00' },
-    { day: 'Tuesday', patientName: 'guerouabi lhachemi', time: '11:00' },
+    { day: 'Monday', patientName: 'Dounia', time: '09:00' },
+    { day: 'Monday', patientName: 'Mehdi', time: '10:00' },
+    { day: 'Tuesday', patientName: 'islam', time: '11:00' },
   ]);
 
   const navigate = useNavigate();
@@ -127,7 +127,7 @@ const DoctorProfilePage = () => {
         <Modal isVisible={showAvailabilityForm} onClose={() => setShowAvailabilityForm(false)}>
           <SetAvailability doctorId={doctorInfo.id} onAddAvailability={handleAddAvailability} />
         </Modal>
-
+        <h1 className="text-2xl font-semibold mb-4 text-darkGreen1">Availabilities</h1>
         <div className="mt-6 flex overflow-x-auto space-x-4 pb-4">
           {availableDates.map((availability, index) => (
             <div key={index} className="min-w-[100px]">
@@ -156,7 +156,7 @@ const DoctorProfilePage = () => {
             )}
           </div>
         )}
-
+        
         <ToastContainer />
       </div>
     </DoctorLayout>

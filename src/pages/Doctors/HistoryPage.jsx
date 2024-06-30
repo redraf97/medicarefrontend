@@ -8,9 +8,9 @@ import { useNavigate } from 'react-router-dom';
 
 const HistoryPage = () => {
   const [patientHistory, setPatientHistory] = useState([
-    { firstName: 'Jim', lastName: 'Carrey', date: '2024-06-01', time: '10:00 AM', status: 'completed' },
-    { firstName: 'Meriem', lastName: 'Pirlo', date: '2024-06-02', time: '11:00 AM', status: 'completed' },
-    { firstName: 'Inox', lastName: 'Tag', date: '2024-06-03', time: '09:00 AM', status: 'completed' },
+    { firstName: 'Omar', lastName: 'Meddah', date: '2024-06-01', time: '10:00 AM', status: 'completed' },
+    { firstName: 'Mehdi', lastName: 'Oustad', date: '2024-06-02', time: '11:00 AM', status: 'completed' },
+    { firstName: 'Skander', lastName: 'Zemouri', date: '2024-06-03', time: '09:00 AM', status: 'completed' },
   ]);
 
   const navigate = useNavigate();

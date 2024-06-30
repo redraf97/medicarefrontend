@@ -9,24 +9,24 @@ const PharmacyList = () => {
     const fakeData = [
       {
         id: 1,
-        name: 'Pharmacie ta3 boussekine',
+        name: 'Pharmacie boussekine',
         isOpen: true,
-        address: 'boussekine bayna',
-        phone: 'derangement'
+        address: 'boussekine, setif',
+        phone: '+213 0000000'
       },
       {
         id: 2,
-        name: 'Pharmacie ta3 les remparts ',
+        name: 'Pharmacie les remparts ',
         isOpen: false,
-        address: 'les remparts',
-        phone: 'mat3aytch rana msakrin'
+        address: 'les remparts, setif',
+        phone: '+213 1111111'
       },
       {
         id: 3,
         name: 'Pharmacie langar',
         isOpen: true,
-        address: 'flangar',
-        phone: '80085'
+        address: 'LANGAR',
+        phone: '+213 2222222'
       }
     ];
     setPharmacies(fakeData);

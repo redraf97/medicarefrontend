@@ -265,7 +265,7 @@ function Signup() {
           <p>
             Are you a practitioner?{" "}
             <Link
-              to="/signup-practitioner"
+              to="/register-prac"
               className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline"
             >
               Sign up here
