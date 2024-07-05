@@ -7,7 +7,7 @@ const TopHome = () => {
       <div className="profPic w-[60px] h-[60px] rounded-50"style={{backgroundImage: `url(${image})`,backgroundSize: "cover",backgroundPosition: "center",}}></div>
       <div className="hi flex flex-col h-[50px] justify-between">
         <h1 className="text-lg font-bold text-darkGreen2">
-          Hi chiheb rahmouni
+          Hi rafik zemouri
         </h1>
         <p className="text-sm text-writingGrey">How is your health?</p>
       </div>

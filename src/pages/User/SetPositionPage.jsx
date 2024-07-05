@@ -53,7 +53,7 @@ const SetPosition = () => {
       setResStatus(res.status);
       setNurseList(res.data.nurseList);
       setRequestData(res.data.requestData);     
-      window.socket.emit('sendRequest',"chiheb" ,res.data.nurseListNames, res.data.requestData)
+      window.socket.emit('sendRequest',"rafik" ,res.data.nurseListNames, res.data.requestData)
 
     }).catch(err => {
       console.log(err);
@@ -64,7 +64,7 @@ const SetPosition = () => {
 
   return (
     <div className='bg-creme2 w-full min-h-screen flex flex-col items-center pt-12'>
-      <p className='text-darkGreen2 font-[600] text-[20px]'>Personalise votre demande</p>
+      <p className='text-darkGreen2 font-[600] text-[20px]'>Personalisez votre demande</p>
       
       <div className="service-position w-full px-8 buttomShadow mt-12 pb-8">
         <SelectService selectedService={selectedService} setSelectedService={setSelectedService} selectedSubService={selectedSubService} setSelectedSubService={setSelectedSubService} subServices={subServices} setSubServices={setSubServices}/>
