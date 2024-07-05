@@ -29,8 +29,8 @@ const DoctorFooter = () => {
           key={index} 
           to={navLink.path} 
           className={(navClass) => navClass.isActive ? 
-            'text-darkGreen1 text-[18px] hover:text-greenHover h-[35px] w-[35px] flex justify-center items-center rounded-50' : 
-            'text-darkGreen4 text-[18px] hover:text-greenHover'}
+            'text-blueketba text-[18px] hover:text-bluefoot h-[35px] w-[35px] flex justify-center items-center rounded-50' : 
+            'text-blueketba text-[18px] hover:text-bluefoot'}
         >
           {navLink.icon}
         </NavLink>

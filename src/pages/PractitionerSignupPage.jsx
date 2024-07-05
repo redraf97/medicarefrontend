@@ -65,7 +65,7 @@ const PractitionerSignupPage = () => {
       <div className="max-w-md w-full space-y-8">
         <form className="mt-8 space-y-6" onSubmit={handleSignup}>
           <div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-darkGreen1">
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-blueketba">
               Practitioner Sign Up
             </h2>
           </div>
@@ -78,7 +78,7 @@ const PractitionerSignupPage = () => {
               name="practitionerType"
               value={practitionerType}
               onChange={(e) => setPractitionerType(e.target.value)}
-              className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+              className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-blueketba placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
             >
               <option value="doctor">Doctor</option>
               <option value="nurse">Nurse</option>
@@ -96,7 +96,7 @@ const PractitionerSignupPage = () => {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-blueketba placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="First Name"
               />
             </div>
@@ -111,7 +111,7 @@ const PractitionerSignupPage = () => {
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-blueketba placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Last Name"
               />
             </div>
@@ -126,7 +126,7 @@ const PractitionerSignupPage = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="appearance-none my-1 relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 relative block w-full px-3 py-4 border-b-2 border-blueketba placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Email"
               />
             </div>
@@ -141,7 +141,7 @@ const PractitionerSignupPage = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-blueketba placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Phone Number"
               />
             </div>
@@ -157,7 +157,7 @@ const PractitionerSignupPage = () => {
                   value={speciality}
                   onChange={(e) => setSpeciality(e.target.value)}
                   required
-                  className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                  className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-blueketba placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                   placeholder="Speciality"
                 />
               </div>
@@ -173,7 +173,7 @@ const PractitionerSignupPage = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-blueketba placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Password"
               />
               <div
@@ -199,7 +199,7 @@ const PractitionerSignupPage = () => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-blueketba placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Confirm Password"
               />
             </div>
@@ -210,14 +210,14 @@ const PractitionerSignupPage = () => {
               By signing up, you agree to our{" "}
               <Link
                 to="/terms"
-                className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline"
+                className="font-medium text-blueketba hover:text-darkGreen1 hover:underline"
               >
                 Terms of Service
               </Link>{" "}
               and{" "}
               <Link
                 to="/privacy"
-                className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline"
+                className="font-medium text-blueketba hover:text-darkGreen1 hover:underline"
               >
                 Privacy Policy
               </Link>
@@ -226,7 +226,7 @@ const PractitionerSignupPage = () => {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-darkGreen2 hover:bg-greenHover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-greenHover"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blueketba hover:bg-greenHover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-greenHover"
             >
               Sign Up
             </button>
@@ -238,7 +238,7 @@ const PractitionerSignupPage = () => {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline"
+              className="font-medium text-blueketba hover:text-bluefoot hover:underline"
             >
               Login
             </Link>

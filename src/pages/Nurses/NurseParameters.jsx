@@ -79,91 +79,91 @@ const NurseParametersPage = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4 text-darkGreen1">Nurse Profile</h1>
+      <h1 className="text-2xl font-bold mb-4 text-blueketba">Nurse Profile</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-darkGreen2">Name</label>
+          <label className="block text-sm font-medium text-blueketba">Name</label>
           <input
             type="text"
             name="name"
             value={nurseInfo.name}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-darkGreen2 shadow-sm"
+            className="mt-1 block w-full rounded-md border-blueketba shadow-sm"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-darkGreen2">Specialization</label>
+          <label className="block text-sm font-medium text-blueketba">Specialization</label>
           <input
             type="text"
             name="specialization"
             value={nurseInfo.specialization}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-darkGreen2 shadow-sm"
+            className="mt-1 block w-full rounded-md border-blueketba shadow-sm"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-darkGreen2">Email</label>
+          <label className="block text-sm font-medium text-blueketba">Email</label>
           <input
             type="email"
             name="email"
             value={nurseInfo.email}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-darkGreen2 shadow-sm"
+            className="mt-1 block w-full rounded-md border-blueketba shadow-sm"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-darkGreen2">Phone</label>
+          <label className="block text-sm font-medium text-blueketba">Phone</label>
           <input
             type="tel"
             name="phone"
             value={nurseInfo.phone}
             onChange={handleChange}
-            className="mt-1 block w-full rounded-md border-darkGreen2 shadow-sm"
+            className="mt-1 block w-full rounded-md border-blueketba shadow-sm"
           />
         </div>
         <button
           type="submit"
-          className="mt-4 bg-darkGreen1 text-white py-2 px-4 rounded hover:bg-greenHover"
+          className="mt-4 bg-blueketba text-white py-2 px-4 rounded hover:bg-bluefoot"
         >
           Save Changes
         </button>
       </form>
 
-      <h2 className="text-xl font-bold mt-8 text-darkGreen1">Change Password</h2>
+      <h2 className="text-xl font-bold mt-8 text-blueketba">Change Password</h2>
       <form onSubmit={handleChangePassword}>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-darkGreen2">Current Password</label>
+          <label className="block text-sm font-medium text-blueketba">Current Password</label>
           <input
             type="password"
             name="currentPassword"
             value={passwords.currentPassword}
             onChange={handlePasswordChange}
-            className="mt-1 block w-full rounded-md border-darkGreen2 shadow-sm"
+            className="mt-1 block w-full rounded-md border-blueketba shadow-sm"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-darkGreen2">New Password</label>
+          <label className="block text-sm font-medium text-blueketba">New Password</label>
           <input
             type="password"
             name="newPassword"
             value={passwords.newPassword}
             onChange={handlePasswordChange}
-            className="mt-1 block w-full rounded-md border-darkGreen2 shadow-sm"
+            className="mt-1 block w-full rounded-md border-blueketba shadow-sm"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-darkGreen2">Confirm New Password</label>
+          <label className="block text-sm font-medium text-blueketba">Confirm New Password</label>
           <input
             type="password"
             name="confirmPassword"
             value={passwords.confirmPassword}
             onChange={handlePasswordChange}
-            className="mt-1 block w-full rounded-md border-darkGreen2 shadow-sm"
+            className="mt-1 block w-full rounded-md border-blueketba shadow-sm"
           />
         </div>
         <button
           type="submit"
-          className="mt-4 bg-darkGreen1 text-white py-2 px-4 rounded hover:bg-greenHover"
+          className="mt-4 bg-blueketba text-white py-2 px-4 rounded hover:bg-bluefoot"
         >
           Change Password
         </button>

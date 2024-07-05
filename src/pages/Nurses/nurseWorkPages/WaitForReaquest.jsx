@@ -34,8 +34,8 @@ const WaitForReaquest = () => {
     <>
     <div className={`main w-full flex-grow pt-12 px-8 flex flex-col items- ${isTaken ? 'bg-[#888888]' : ''}`} style={isTaken ? {filter: "blur(3px) brightness(70%)", pointerEvents: "none"} : {}}>
         <div className="content flex flex-col items-center mt-20">
-          <FontAwesomeIcon icon={faCheck} className="text-darkGreen4 text-[200px]" />
-          <h1 className="text-2xl text-darkGreen4 my-6">Waiting for Request</h1>
+          <FontAwesomeIcon icon={faCheck} className="text-blueketba text-[200px]" />
+          <h1 className="text-2xl text-blueketba my-6">Waiting for Request</h1>
           <div className="loader"></div>
         </div>
     </div>

@@ -58,7 +58,7 @@ const AcceptingWork = () => {
         <p className="mt-4 text-darkGreen2 font-[700] text-center">{requestData.service}</p>
         <p className="mt-1 mb-5 text-writingGrey font-[600] text-center">{requestData.subService}</p>
         <ClientInfos name={requestData.patient} rate={requestData.patientRate}/>
-        <hr className="mt-6 border-1 border-darkGreen4 " />
+        <hr className="mt-6 border-1 border-blueketba " />
 
         <div className="ServiceDetails mt-6 flex items-center justify-between px-2">
           <ServiceDetails icon={faRoad} info={requestData.distance +' ' + "km"}/>
@@ -77,8 +77,8 @@ const AcceptingWork = () => {
         </div>
 
         <div className="buttons mt-7 flex flex-col items-center gap-5">
-          <button className=" w-full py-3 rounded-20 border-2 border-darkGreen4 text-sm hover:bg-creme">Cancel</button>
-          <button className=" w-full py-3 rounded-20 border-2 border-darkGreen4 text-sm hover:bg-creme" onClick={finish}>done</button>
+          <button className=" w-full py-3 rounded-20 border-2 border-blueketba text-sm hover:bg-creme">Cancel</button>
+          <button className=" w-full py-3 rounded-20 border-2 border-blueketba text-sm hover:bg-creme" onClick={finish}>done</button>
         </div>
       </div>
     </div>

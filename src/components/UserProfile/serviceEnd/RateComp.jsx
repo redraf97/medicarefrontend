@@ -35,7 +35,7 @@ const RateComp = ({ stars, setStars, sentence }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <p className="text-darkGreen4 font-[600] flex flex-col items-center font-poppins">
+      <p className="text-blueketba font-[600] flex flex-col items-center font-poppins">
         {sentence}
       </p>
       <div className="rating">
@@ -52,7 +52,7 @@ const RateComp = ({ stars, setStars, sentence }) => {
       </div>
           
       <div className="avis font-poppins text-sm text-writingGrey" ref={avisRef}>
-        your feedback is annoomous
+        your feedback is annonymous
       </div>
 
     </div>

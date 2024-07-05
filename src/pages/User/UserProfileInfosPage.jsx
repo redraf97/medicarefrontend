@@ -100,10 +100,10 @@ const UserProfileInfos = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 bg-creme2 min-h-screen">
-      <h2 className="text-2xl font-bold text-darkGreen1 mb-4">User Profile</h2>
+      <h2 className="text-2xl font-bold text-blueketba mb-4">User Profile</h2>
 
       <div className="mb-6">
-        <label className="block text-darkGreen1 mb-2">First Name</label>
+        <label className="block text-blueketba mb-2">First Name</label>
         <input
           type="text"
           name="firstName"
@@ -114,7 +114,7 @@ const UserProfileInfos = () => {
       </div>
 
       <div className="mb-6">
-        <label className="block text-darkGreen1 mb-2">Last Name</label>
+        <label className="block text-blueketba mb-2">Last Name</label>
         <input
           type="text"
           name="lastName"
@@ -125,7 +125,7 @@ const UserProfileInfos = () => {
       </div>
 
       <div className="mb-6">
-        <label className="block text-darkGreen1 mb-2">Email</label>
+        <label className="block text-blueketba mb-2">Email</label>
         <input
           type="email"
           name="email"
@@ -136,7 +136,7 @@ const UserProfileInfos = () => {
       </div>
 
       <div className="mb-6">
-        <label className="block text-darkGreen1 mb-2">Phone</label>
+        <label className="block text-blueketba mb-2">Phone</label>
         <input
           type="text"
           name="phone"
@@ -147,7 +147,7 @@ const UserProfileInfos = () => {
       </div>
 
       <div className="mb-6">
-        <label className="block text-darkGreen1 mb-2">Address</label>
+        <label className="block text-blueketba mb-2">Address</label>
         <input
           type="text"
           name="address"
@@ -159,15 +159,15 @@ const UserProfileInfos = () => {
 
       <button
         onClick={handleUpdateProfile}
-        className="bg-darkGreen2 text-white py-2 px-4 rounded hover:bg-greenHover"
+        className="bg-blueketba text-white py-2 px-4 rounded hover:bg-bluefoot"
       >
         Update Profile
       </button>
 
-      <h2 className="text-2xl font-bold text-darkGreen1 mt-8 mb-4">Change Password</h2>
+      <h2 className="text-2xl font-bold text-blueketba mt-8 mb-4">Change Password</h2>
 
       <div className="mb-6">
-        <label className="block text-darkGreen1 mb-2">New Password</label>
+        <label className="block text-blueketba mb-2">New Password</label>
         <input
           type="password"
           value={newPassword}
@@ -177,7 +177,7 @@ const UserProfileInfos = () => {
       </div>
 
       <div className="mb-6">
-        <label className="block text-darkGreen1 mb-2">Confirm Password</label>
+        <label className="block text-blueketba mb-2">Confirm Password</label>
         <input
           type="password"
           value={confirmPassword}
@@ -188,7 +188,7 @@ const UserProfileInfos = () => {
 
       <button
         onClick={handleChangePassword}
-        className="bg-darkGreen2 text-white py-2 px-4 rounded hover:bg-greenHover"
+        className="bg-blueketba text-white py-2 px-4 rounded hover:bg-bluefoot"
       >
         Change Password
       </button>

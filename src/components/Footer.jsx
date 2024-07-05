@@ -4,7 +4,7 @@ import { faInstagram, faFacebook, faLinkedin, faGithub } from '@fortawesome/free
 
 const Footer = () => {
   return (
-    <footer className="bg-darkGreen1 text-white py-6">
+    <footer className="bg-bluefoot text-white py-6">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <p className="text-sm">&copy; 2024 MEDIcare. All rights reserved.</p>

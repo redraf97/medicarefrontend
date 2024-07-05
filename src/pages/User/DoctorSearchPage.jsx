@@ -98,11 +98,11 @@ const DoctorSearchPage = () => {
       </div>
 
       <div className="flex space-x-2 mb-4">
-        <button className="px-4 py-2 bg-darkGreen2 text-white rounded">All</button>
-        <button className="px-4 py-2 bg-lightGreen text-darkGreen1 rounded">Brain</button>
-        <button className="px-4 py-2 bg-lightGreen text-darkGreen1 rounded">Cardio</button>
-        <button className="px-4 py-2 bg-lightGreen text-darkGreen1 rounded">Eye</button>
-        <button className="px-4 py-2 bg-lightGreen text-darkGreen1 rounded">Dentist</button>
+        <button className="px-4 py-2 bg-blueketba text-white rounded">All</button>
+        <button className="px-4 py-2 bg-lightGreen text-blueketba rounded">Brain</button>
+        <button className="px-4 py-2 bg-lightGreen text-blueketba rounded">Cardio</button>
+        <button className="px-4 py-2 bg-lightGreen text-blueketba rounded">Eye</button>
+        <button className="px-4 py-2 bg-lightGreen text-blueketba rounded">Dentist</button>
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -130,7 +130,7 @@ const DoctorSearchPage = () => {
               ))}
             </select>
             <button
-              className="bg-darkGreen2 text-white py-2 px-4 rounded hover:bg-greenHover"
+              className="bg-blueketba text-white py-2 px-4 rounded hover:bg-bluefoot"
               onClick={handleAppointmentSubmit}
             >
               Confirm Appointment
@@ -147,7 +147,7 @@ const DoctorSearchPage = () => {
 
       <Link
         to="/user-home"
-        className="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-darkGreen2 text-white py-2 px-4 rounded-full shadow-lg hover:bg-greenHover"
+        className="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-blueketba text-white py-2 px-4 rounded-full shadow-lg hover:bg-bluefoot"
       >
         Home
       </Link>

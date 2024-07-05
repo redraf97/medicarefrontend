@@ -45,7 +45,7 @@ const NearbyNurses = () => {
     <>
     <div className='main bg-creme2 flex flex-col items-center justify-between pl-4 pb-[130px] relative h-[100vh]' style={isWaiting ? {filter: "blur(3px) brightness(70%)", pointerEvents: "none"} : {}}>
       <div className="top w-full flex flex-col items-center rounded-br-20 rounded-bl-20 overflow-auto pr-2">
-        <p className='text-darkGreen2 font-[600] text-[20px] mt-12 text-center'>Nearby Nurses</p>
+        <p className='text-blueketba font-[600] text-[20px] mt-12 text-center'>Nearby Nurses</p>
         <p className='text-writingGrey text-sm self-start mt-6'>Selectionner</p>    
         <div className="nearByNurses mt-2 flex flex-col w-full gap-2">
               {nurseList ? nurseList.map((nurse, index) => {
@@ -55,7 +55,7 @@ const NearbyNurses = () => {
       </div>
 
       <div className="confirmeNurse w-full mt-5 pr-4 fixed bottom-[70px]">
-        <button className={`w-full py-3 rounded-[10px] ${choosenNurseName ? 'bg-darkGreen4' : 'bg-gray-400'} shadow-panelShadow text-creme2`} disabled={!choosenNurseName} onClick={sendRequest}>
+        <button className={`w-full py-3 rounded-[10px] ${choosenNurseName ? 'bg-blueketba' : 'bg-gray-400'} shadow-panelShadow text-creme2`} disabled={!choosenNurseName} onClick={sendRequest}>
           cbn n3ytolo?
         </button>
       </div>      

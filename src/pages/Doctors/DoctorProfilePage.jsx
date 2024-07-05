@@ -113,7 +113,7 @@ const DoctorProfilePage = () => {
         <div className="flex justify-end space-x-4 mb-4">
           <button
             onClick={() => setShowAvailabilityForm(true)}
-            className="bg-darkGreen1 text-white px-4 py-2 rounded-md"
+            className="bg-blueketba text-white px-4 py-2 rounded-md"
           >
             Add Availability
           </button>
@@ -142,7 +142,7 @@ const DoctorProfilePage = () => {
 
         {selectedDay && (
           <div className="mt-6">
-            <h3 className="text-xl font-semibold mb-4 text-darkGreen1">Appointments for {selectedDay}</h3>
+            <h3 className="text-xl font-semibold mb-4 text-blueketba">Appointments for {selectedDay}</h3>
             {appointments.length > 0 ? (
               <ul>
                 {appointments.map((appointment, index) => (

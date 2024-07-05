@@ -53,7 +53,7 @@ const NurseWorkPageTop = () => {
 
   return (
     <div className="top relative z-20 bg-white shadow-panelShadow rounded-br-20 rounded-bl-20 px-5 flex justify-between items-center py-2 mx-4">
-        <span className="font-[500] text-darkGreen4">Appointment</span>
+        <span className="font-[500] text-blueketba">Appointment</span>
         <div ref={switchStateRef} onClick={switchStateButton}>
         <label className="toggle-btn">
             <input type="checkbox"/>

@@ -37,7 +37,7 @@ const UserButtomNavBar = () => {
   return (
         <div className='flex w-full justify-around items-center bg-white h-[55px] rounded-tl-20 rounded-tr-20 shadow-panelShadow fixed bottom-0 z-40'>
             {navLinks.map((navLink, index) => (
-                <NavLink key={index} to={navLink.path} className={(navClass)=> navClass.isActive? 'text-darkGreen1 text-[18px] hover:text-greenHover h-[35px] w-[35px]' : 'text-darkGreen4 text-[18px] hover:text-greenHover'}>
+                <NavLink key={index} to={navLink.path} className={(navClass)=> navClass.isActive? 'text-blueketba text-[18px] hover:text-bluefoot h-[35px] w-[35px]' : 'text-blueketba text-[18px] hover:text-bluefoot'}>
                     {navLink.icon}
                 </NavLink>
             ))}

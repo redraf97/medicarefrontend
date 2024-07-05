@@ -24,9 +24,9 @@ const MapPage = () => {
 </MapContainer>   
 
           <div className="location absolute bottom-0 w-full rounded-tl-20 rounded-tr-20 bg-white z-20 flex flex-col items-center px-4 pt-4 pb-[70px]">
-            <hr className="border-t-[3px] border-darkGreen2 w-[70px] rounded-50" />
-            <p className='text-darkGreen2 font-bold mt-4'>gfKDHGFKhgfHHFGegflEGFLyeg</p>
-            <button className='w-full bg-darkGreen4 shadow-panelShadow text-creme2 py-3 rounded-20 mt-6' onClick={locate}>confirme location</button>
+            <hr className="border-t-[3px] border-blueketba w-[70px] rounded-50" />
+            <p className='text-blueketba font-bold mt-4'>gfKDHGFKhgfHHFGegflEGFLyeg</p>
+            <button className='w-full bg-blueketba shadow-panelShadow text-creme2 py-3 rounded-20 mt-6' onClick={locate}>confirme location</button>
           </div>    
       
       
