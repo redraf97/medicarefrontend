@@ -42,8 +42,8 @@ const WaitUserConfirmation = ({}) => {
           <circle className="progress" r="18" cx="20" cy="20" style={{animationDuration: '15s'}}></circle>
         </svg>
       </div>
-        <p className='text-darkGreen4 text-[18px] font-[700] text-center'>wait for {name}'s confirmation</p>
-        <p className='text-center text-writingGrey'>during the next 20sec u will be accepted automayicually</p>
+        <p className='text-blueketba text-[18px] font-[700] text-center'>wait for {name}'s confirmation</p>
+        <p className='text-center text-writingGrey'>during the next 20sec you will be accepted automatically</p>
     </div>
   )
 }

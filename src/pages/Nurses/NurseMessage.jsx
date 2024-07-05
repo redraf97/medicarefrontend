@@ -35,10 +35,10 @@ const NurseMessage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 mt-6 bg-creme2 min-h-screen">
-      <h2 className="text-2xl font-bold text-darkGreen1 mb-4">Send Us a Message</h2>
+      <h2 className="text-2xl font-bold text-blueketba mb-4">Send Us a Message</h2>
 
       <div className="mb-6">
-        <label className="block text-darkGreen1 mb-2">Subject</label>
+        <label className="block text-blueketba mb-2">Subject</label>
         <input
           type="text"
           value={subject}
@@ -48,7 +48,7 @@ const NurseMessage = () => {
       </div>
 
       <div className="mb-6">
-        <label className="block text-darkGreen1 mb-2">Message</label>
+        <label className="block text-blueketba mb-2">Message</label>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -59,7 +59,7 @@ const NurseMessage = () => {
 
       <button
         onClick={handleSendMessage}
-        className="bg-darkGreen2 text-white py-2 px-4 rounded hover:bg-greenHover"
+        className="bg-blueketba text-white py-2 px-4 rounded hover:bg-bluefoot"
       >
         Send Message
       </button>

@@ -9,7 +9,7 @@ const TopHome = () => {
         <h1 className="text-lg font-bold text-darkGreen2">
           Hi rafik zemouri
         </h1>
-        <p className="text-sm text-writingGrey">How is your health?</p>
+        <p className="text-sm text-black">How is your health?</p>
       </div>
     </div>
   );

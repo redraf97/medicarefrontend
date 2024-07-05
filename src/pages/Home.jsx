@@ -34,22 +34,22 @@ const Home = () => {
         <img src="/src/assets/images/avatar-icon.png" alt="Avatar" className="w-16 h-16 rounded-full"/>
         <div>
           <h2 className="text-xl font-bold text-darkGreen1">Hi {user.firstName || 'guest'} {user.lastName || ''}</h2>
-          <p className="text-darkGreen4">How is your health?</p>
+          <p className="text-blueketba">How is your health?</p>
         </div>
       </div>
 
       <div className="mt-8">
-        <h3 className="text-lg font-semibold text-darkGreen2">Services</h3>
+        <h3 className="text-lg font-semibold text-blueketba">Services</h3>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
-          <Link to="/Doctor-search" className="bg-lightGreen text-darkGreen1 p-4 rounded shadow-md hover:bg-greenHover">
+          <Link to="/Doctor-search" className="bg-lightGreen text-blueketba p-4 rounded shadow-md hover:bg-bluefoot">
             <h4 className="font-bold">Medicine</h4>
             <p>Reserve your day with the best services now</p>
           </Link>
-          <Link to="/user-asking" className="bg-lightGreen text-darkGreen1 p-4 rounded shadow-md hover:bg-greenHover">
+          <Link to="/user-asking" className="bg-lightGreen text-blueketba p-4 rounded shadow-md hover:bg-bluefoot">
             <h4 className="font-bold">Nursing</h4>
             <p>Care services provided at home</p>
           </Link>
-          <Link to="/pharmacy-selection" className="bg-lightGreen text-darkGreen1 p-4 rounded shadow-md hover:bg-greenHover">
+          <Link to="/pharmacy-selection" className="bg-lightGreen text-blueketba p-4 rounded shadow-md hover:bg-bluefoot">
             <h4 className="font-bold">Pharmacy</h4>
             <p>Get your medications delivered to your door</p>
           </Link>
@@ -59,13 +59,13 @@ const Home = () => {
       <div className="mt-8">
         <h3 className="text-lg font-semibold text-darkGreen2">Categories</h3>
         <div className="flex space-x-4 mt-4">
-          <Link to="/general" className="bg-lightGrey p-4 rounded shadow-md hover:bg-greyHover text-darkGreen2">
+          <Link to="/general" className="bg-lightGrey p-4 rounded shadow-md hover:bg-greyHover text-blueketba">
             General
           </Link>
-          <Link to="/specialized" className="bg-lightGrey p-4 rounded shadow-md hover:bg-greyHover text-darkGreen2">
+          <Link to="/specialized" className="bg-lightGrey p-4 rounded shadow-md hover:bg-greyHover text-blueketba">
             Specialized
           </Link>
-          <Link to="/home-care" className="bg-lightGrey p-4 rounded shadow-md hover:bg-greyHover text-darkGreen2">
+          <Link to="/home-care" className="bg-lightGrey p-4 rounded shadow-md hover:bg-greyHover text-blueketba">
             Home
           </Link>
         </div>

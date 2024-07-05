@@ -4,17 +4,15 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const NoworkPage = () => {
   return (
-    <>
-      <div className="w-full flex flex-col items-center pt-40 px-4">
-        <FontAwesomeIcon icon={faXmark} className="text-red-400 text-[200px] "/>
-        <span className="font-[500] text-darkGreen4 text-2xl">
-          You want to work ?
-        </span>
-        <span className="font-[400] text-darkGreen4 text-lg mt-2 text-center">
-          Now you are out, please change your status
-        </span>
-      </div>
-    </>
+    <div className="w-full flex flex-col items-center pt-40 px-4">
+      <FontAwesomeIcon icon={faXmark} className="text-red-400 text-[200px] mb-4" />
+      <span className="font-semibold text-blueketba text-2xl">
+        Want to get back to work?
+      </span>
+      <span className="font-normal text-blueketba text-lg mt-2 text-center">
+        Currently, you are not available. Please update your status on top of the page to start working again.
+      </span>
+    </div>
   );
 };
 

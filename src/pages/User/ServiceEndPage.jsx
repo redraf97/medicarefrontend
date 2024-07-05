@@ -45,27 +45,27 @@ const ServiceEnd = () => {
   return (
     <div className="min-h-screen bg-creme2 flex flex-col items-center pt-12 px-4 pb-[70px]">
 
-      <p className="text-darkGreen1 font-[600]">thank you {userData.name}</p>
+      <p className="text-blueketba font-[600]">thank you {userData.name}</p>
 
       <div className="servicenurse flex justify-between items-center mt-6 gap-2 w-full">
         <div className="left flex items-center gap-2">
           <img src={image} className="w-[60px] rounded-20" />
-          <span className="text-darkGreen4 font-[500]">{data.nurseName}</span>
+          <span className="text-blueketba font-[500]">{data.nurseName}</span>
         </div>
         <span className="">500 dZD</span>
       </div>
 
-      <hr className="border-t-1 border-darkGreen4 w-full mt-6" />
+      <hr className="border-t-1 border-blueketba w-full mt-6" />
       
       <div className="rate w-full flex-1 mt-6 flex flex-col items-center justify-between">
-        <p className="text-sm text-darkGreen4 self-start">your feed back important to us</p>
+        <p className="text-sm text-blueketba self-start">your feed back important to us</p>
         <div className="starsRate">
           <RateComp stars={stars} setStars={setStars} sentence={"How did you find affaf's service ?"} />
         </div>
 
         <div className="commentAndConfirme w-full flex flex-col gap-4">
-          <input type="text" className="appearance-none outline-none bg-[#e7e6ea] text-sm py-3 rounded-[10px] px-4  focus:ring-2 focus:ring-darkGreen4" value={comment} placeholder="add a comment" onChange={(e) => setComment(e.target.value)} />
-          <button className="bg-darkGreen4 text-white rounded-50 text-sm py-3" onClick={sendRate}>Send</button>
+          <input type="text" className="appearance-none outline-none bg-[#e7e6ea] text-sm py-3 rounded-[10px] px-4  focus:ring-2 focus:ring-blueketba" value={comment} placeholder="add a comment" onChange={(e) => setComment(e.target.value)} />
+          <button className="bg-blueketba text-white rounded-50 text-sm py-3" onClick={sendRate}>Send</button>
         </div>
 
       </div>

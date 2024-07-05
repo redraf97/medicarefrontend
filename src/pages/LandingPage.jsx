@@ -19,19 +19,19 @@ const LandingPage = () => {
           </div>
           
           <div className="mt-8">
-        <h3 className="text-lg font-semibold text-darkGreen2">Services</h3>
+        <h3 className="text-lg font-semibold text-black">Services</h3>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
-          <Link to="/login" className="bg-lightGreen text-darkGreen1 p-4 rounded shadow-md hover:bg-greenHover">
+          <Link to="/login" className="bg-lightGreen text-blueketba p-4 rounded shadow-md hover:bg-greenHover">
             <h4 className="font-bold">Medicine</h4>
             <p>Reserve your day with the best services now</p>
           </Link>
-          <Link to="/login" className="bg-lightGreen text-darkGreen1 p-4 rounded shadow-md hover:bg-greenHover">
+          <Link to="/login" className="bg-lightGreen text-blueketba p-4 rounded shadow-md hover:bg-greenHover">
             <h4 className="font-bold">Nursing</h4>
             <p>Care services provided at home</p>
           </Link>
-          <Link to="/login" className="bg-lightGreen text-darkGreen1 p-4 rounded shadow-md hover:bg-greenHover">
+          <Link to="/login" className="bg-lightGreen text-blueketba p-4 rounded shadow-md hover:bg-greenHover">
             <h4 className="font-bold">Pharmacy</h4>
-            <p>Get your medications delivered to your door</p>
+            <p>Check for open pharmacies</p>
           </Link>
         </div>
       </div>

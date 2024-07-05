@@ -80,7 +80,7 @@ const SettingsPage = () => {
   return (
     <DoctorLayout>
       <div className="container mx-auto p-6">
-        <h1 className="text-2xl font-bold text-darkGreen1 mb-4">Settings</h1>
+        <h1 className="text-2xl font-bold text-blueketba mb-4">Settings</h1>
         
         <div className="mb-6">
           <h2 className="text-xl font-semibold mb-2">Personal Information</h2>
@@ -127,7 +127,7 @@ const SettingsPage = () => {
             </div>
             <button
               type="submit"
-              className="bg-darkGreen1 text-white px-4 py-2 rounded-md"
+              className="bg-blueketba text-white px-4 py-2 rounded-md"
             >
               Update Information
             </button>
@@ -169,7 +169,7 @@ const SettingsPage = () => {
             </div>
             <button
               type="submit"
-              className="bg-darkGreen1 text-white px-4 py-2 rounded-md"
+              className="bg-blueketba text-white px-4 py-2 rounded-md"
             >
               Change Password
             </button>
