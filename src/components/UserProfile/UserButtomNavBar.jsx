@@ -16,7 +16,7 @@ const UserButtomNavBar = () => {
             },
             {
             title: 'messages',
-            path: '/NurseMessages',
+            path: '/User-messages',
             icon: <FontAwesomeIcon icon={faEnvelope} />
             },
             {

@@ -1,30 +1,23 @@
-import {
-  useState,
-  //useref
-} from "react";
-import { Link } from "react-router-dom";
-//import "react-phone-number-input/style.css";
-//import PhoneInput2 from "react-phone-input-2";
-//import PhoneInput from "react-phone-number-input";
-//import 'react-phone-input-2/lib/style.css'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { HiOutlineEye, HiEyeOff } from 'react-icons/hi';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
-import { HiOutlineEye, HiEyeOff } from "react-icons/hi";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
-
-function Signup() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+const PractitionerSignupPage = () => {
+  const [practitionerType, setPractitionerType] = useState('doctor');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [speciality, setSpeciality] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [address, setAddress] = useState("");
-  //let passwordRef = useRef();
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSignup = (event) => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
@@ -37,25 +30,25 @@ function Signup() {
       return;
     }
 
-    const name = firstName + " " + lastName;
-    axios
-      .post("http://localhost:3000/signup-patient", {
-        name,
-        email,
-        phone,
-        password,
-        address,
-      })
+    const endpoint = practitionerType === 'doctor' ? 'signup-doctor' : 'signup-nurse';
+
+    axios.post(`http://localhost:3000/api/${endpoint}`, {
+      firstName,
+      lastName,
+      email,
+      phone,
+      speciality,
+      password
+    })
       .then((response) => {
-        console.log(response.data.message);
         toast.success(response.data.message, {
           autoClose: 3000,
           closeOnClick: true,
           pauseOnHover: true,
         });
+        navigate('/login');
       })
       .catch((error) => {
-        console.log(error.response.data);
         if (error.response) {
           toast.error(error.response.data.message, {
             autoClose: 3000,
@@ -68,13 +61,28 @@ function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-blur py-1 px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-center bg-creme2 py-1 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="mt-8 space-y-6" onSubmit={handleSignup}>
           <div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-darkGreen1">
-              Sign Up
+              Practitioner Sign Up
             </h2>
+          </div>
+          <div>
+            <label htmlFor="practitionerType" className="sr-only">
+              Practitioner Type
+            </label>
+            <select
+              id="practitionerType"
+              name="practitionerType"
+              value={practitionerType}
+              onChange={(e) => setPractitionerType(e.target.value)}
+              className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+            >
+              <option value="doctor">Doctor</option>
+              <option value="nurse">Nurse</option>
+            </select>
           </div>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
@@ -88,7 +96,6 @@ function Signup() {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required
-                /*className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"*/
                 className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="First Name"
               />
@@ -123,20 +130,6 @@ function Signup() {
                 placeholder="Email"
               />
             </div>
-            {/*<PhoneInput
-                placeholder="Enter phone number"
-                value={phone}
-                onChange={setPhone}
-                  className="appearance-none my-1 relative block w-full px-3 py-4 border-b-2 border-indigo-500 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-               />*/}
-            {/*<PhoneInput
-              placeholder="Enter phone number"
-              value={phone}
-              onChange={setPhone}
-              international
-              defaultCountry="DZ"
-              className="border-b-darkGreen2 focus-ring-darkGreen2 focus-border-darkGreen2 mb-4 react-phone-number-input"
-            />*/}
             <div>
               <label htmlFor="phone" className="sr-only">
                 Phone Number
@@ -146,35 +139,29 @@ function Signup() {
                 name="phone"
                 type="text"
                 value={phone}
-                onChange={(e) => {
-                  setPhone(e.target.value);
-                }}
-                onBlur={(e) => {
-                  const phoneRegex = /^0[5-7]\d{8}$/;
-                  if (!phoneRegex.test(e.target.value)) {
-                    alert("Invalid phone number");
-                  }
-                }}
+                onChange={(e) => setPhone(e.target.value)}
+                required
                 className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
                 placeholder="Phone Number"
               />
             </div>
-            <div>
-              <label htmlFor="address" className="sr-only">
-                Address
-              </label>
-              <input
-                id="address"
-                name="address"
-                type="text"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
-                placeholder="Address"
-              />
-            </div>
-
+            {practitionerType === 'doctor' && (
+              <div>
+                <label htmlFor="speciality" className="sr-only">
+                  Speciality
+                </label>
+                <input
+                  id="speciality"
+                  name="speciality"
+                  type="text"
+                  value={speciality}
+                  onChange={(e) => setSpeciality(e.target.value)}
+                  required
+                  className="appearance-none my-1 rounded-none relative block w-full px-3 py-4 border-b-2 border-darkGreen2 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-darkGreen2 focus:border-darkGreen2 focus:z-10 sm:text-sm"
+                  placeholder="Speciality"
+                />
+              </div>
+            )}
             <div className="relative">
               <label htmlFor="password" className="sr-only">
                 Password
@@ -195,15 +182,9 @@ function Signup() {
                 onClick={() => setIsPasswordVisible(!isPasswordVisible)}
               >
                 {isPasswordVisible ? (
-                  <HiOutlineEye
-                    className="w-8 h-10 text-gray-400 absolute inset-y-1 right-0 pr-3 flex items-center cursor-pointer"
-                    onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-                  />
+                  <HiOutlineEye className="w-8 h-10 text-gray-400 absolute inset-y-1 right-0 pr-3 flex items-center cursor-pointer" />
                 ) : (
-                  <HiEyeOff
-                    className="w-8 h-10 text-gray-400 absolute inset-y-1 right-0 pr-3 flex items-center cursor-pointer"
-                    onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-                  />
+                  <HiEyeOff className="w-8 h-10 text-gray-400 absolute inset-y-1 right-0 pr-3 flex items-center cursor-pointer" />
                 )}
               </div>
             </div>
@@ -257,24 +238,16 @@ function Signup() {
             Already have an account?{" "}
             <Link
               to="/login"
-              className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline" 
+              className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline"
             >
               Login
             </Link>
           </p>
-          <p>
-            Are you a practitioner?{" "}
-            <Link
-              to="/register-prac"
-              className="font-medium text-darkGreen2 hover:text-darkGreen1 hover:underline"
-            >
-              Sign up here
-            </Link>
-          </p>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
-}
+};
 
-export default Signup;
+export default PractitionerSignupPage;

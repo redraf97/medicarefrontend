@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 //import { FaHome, FaCalendar, FaEnvelope, FaUser } from 'react-icons/fa'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faCalendar, faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faCalendar, faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -10,13 +10,13 @@ const NurseButtomNav = () => {
 
     const navLinks = [
         {
-            title: 'Home',
-            path: '/Nurse-Home',
-             icon: <FontAwesomeIcon icon={faHome} />
+            title: 'Nurse-parameters',
+            path: '/Nurse-Parameters',
+            icon: <FontAwesomeIcon icon={faCog} />,
             },
             {
             title: 'messages',
-            path: '/NurseMessages',
+            path: '/Nurse-Messages',
             icon: <FontAwesomeIcon icon={faEnvelope} />
             },
             {

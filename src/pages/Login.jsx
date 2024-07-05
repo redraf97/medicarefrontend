@@ -36,9 +36,9 @@ const Login = () => {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("userName", response.data.user.name);
         localStorage.setItem("userType", response.data.user.type);
-        if (response.data.user.type === "doctor") navigate("/docprofile");
-        if (response.data.user.type === "patient") navigate("/User-Profile");
-        if (response.data.user.type === "nurse") navigate("/Nurse-Profile");
+        if (response.data.user.type === "doctor") navigate("/Doctor-profile");
+        if (response.data.user.type === "patient") navigate("/User-Home");
+        if (response.data.user.type === "nurse") navigate("/Nurse-work");
       }
       
     }).catch((error) => {
@@ -149,7 +149,7 @@ const Login = () => {
           </div>
           <div className="text-center">
             <Link
-              to="/register"
+              to="/signup"
               className="font-medium text-darkGreen4 hover:text-greenHover hover:underline"
             >
               Don&apos;t have an account? Signup

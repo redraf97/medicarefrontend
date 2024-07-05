@@ -17,7 +17,7 @@ const InfosSection = () => {
   return (
     <>
       <div className="infosSection relative bg-white p-[25px] rounded-20 mt-[35px] w-full flex flex-col gap-[35px] items-center shadow-panelShadow       lg:w-[70%] lg:flex-row">
-        <img src={profilePictureCorrect} className="profilePicture w-[180px] h-[180px] rounded-[50%]" />
+        <img src="/src/assets/images/icon01.png" className="profilePicture w-[180px] h-[180px] rounded-[50%]" />
         <div className="infos flex-grow">
           <p className="doctorName text-[30px] font-medium text-darkGreen2">{name}</p>
           <span className="key text-[#888888]">date:</span>{" "}
