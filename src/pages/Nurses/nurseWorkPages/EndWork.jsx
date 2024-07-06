@@ -38,7 +38,7 @@ const EndWork = () => {
       <div className="servicenurse flex justify-between items-center mt-6 gap-2 w-full">
         <div className="left flex items-center gap-2">
           <img src={image} className="w-[60px] rounded-20" />
-          <span className="text-darkGreen4 font-[500]">chiheb rahmouni</span>
+          <span className="text-darkGreen4 font-[500]">rafik zemouri</span>
         </div>
         <span className="">500 dZD</span>
       </div>

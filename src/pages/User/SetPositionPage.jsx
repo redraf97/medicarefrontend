@@ -53,7 +53,7 @@ const SetPosition = () => {
       setResStatus(res.status);
       setNurseList(res.data.nurseList);
       setRequestData(res.data.requestData);
-      window.socket.emit('sendRequest', "chiheb", res.data.nurseListNames, res.data.requestData)
+      window.socket.emit('sendRequest', "rafik", res.data.nurseListNames, res.data.requestData)
     }).catch(err => {
       console.log(err);
     })
