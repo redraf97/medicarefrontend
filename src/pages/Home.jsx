@@ -57,7 +57,7 @@ const Home = () => {
       </div>
 
       <div className="mt-8">
-        <h3 className="text-lg font-semibold text-darkGreen2">Categories</h3>
+        <h3 className="text-lg font-semibold text-blueketba">Categories</h3>
         <div className="flex space-x-4 mt-4">
           <Link to="/general" className="bg-lightGrey p-4 rounded shadow-md hover:bg-greyHover text-blueketba">
             General
