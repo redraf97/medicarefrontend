@@ -43,7 +43,7 @@ const Routers = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Signup />} />
       <Route path="/register-prac" element={<PractitionerSignupPage />} />
-      <Route path="/pharmacy-selection" element={<UserLayout><PharmacySelectionPage /></UserLayout>} />
+      
 
       {/* Nurse */}
       <Route path="/Nurse-Profile" element={<NurseWorkLayout><NurseInfosPage /></NurseWorkLayout>} />
@@ -54,9 +54,8 @@ const Routers = () => {
       <Route path="/Nurse-messages" element={<NurseWorkLayout><NurseMessage /></NurseWorkLayout>} />
       <Route path="/Nurse-parameters" element={<NurseWorkLayout><NurseParametersPage /></NurseWorkLayout>} />
 
-
-
       {/* User */}
+      <Route path="/pharmacy-selection" element={<UserLayout><PharmacySelectionPage /></UserLayout>} />
       <Route path="/User-Home" element={<UserLayout><Home /></UserLayout>} />
       <Route path="/User-Profile" element={<UserLayout><UserProfileInfos /></UserLayout>} />
       <Route path="/User-asking" element={<UserLayout><AskingForNurse /></UserLayout>} />
@@ -67,10 +66,10 @@ const Routers = () => {
       <Route path="/User-service-end" element={<UserLayout><ServiceEnd /></UserLayout>} />
       <Route path="/User-thanks" element={<UserLayout><ThankYouPage /></UserLayout>} />
       <Route path="/User-test" element={<UserLayout><TestPage /></UserLayout>} />
+      <Route path="/Doctor-search" element={<DoctorSearchPage />} />
       <Route path="/User-messages" element={<UserLayout><UserMessagesPage /></UserLayout>} />
 
       {/* Doctor */}
-      <Route path="/Doctor-search" element={<DoctorSearchPage />} />
       <Route path="/Doctor-profile" element={<DoctorProfilePage />} />
       <Route path="/Doctor-settings" element={<SettingsPage />} />
       <Route path="/Doctor-history" element={<HistoryPage />} />

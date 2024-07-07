@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/Logo-Medicare-Final.png';
 import axios from 'axios';
 
 const Header = () => {
@@ -51,7 +51,7 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center p-4 bg-white shadow-md">
       <div className="flex items-center">
-        <img src={logo} alt="Logo" className="h-10 mr-2" />
+        <img src={logo} alt="Logo" className="h-20 ml-4" />
       </div>
       <div className="relative">
         <button onClick={toggleMenu} className="text-blueketba text-2xl">
