@@ -63,8 +63,12 @@ const SetPosition = () => {
 
   return (
     <div className='bg-creme2 w-full min-h-screen flex flex-col items-center pt-12'>
-      <p className='text-darkGreen2 font-[600] text-[20px]'>Personalise votre demande</p>
-
+      <p className='text-blueketba font-[600] text-[20px]'>Demandez un infirmier</p>
+<div className={`terminer px-11 text-creme2 py-3 text-center ${isValidLocation && selectedService !== "" && selectedSubService !== "" ? 'bg-blueketba' : 'bg-gray-400'} rounded-[10px]`}>
+          <button disabled={!(isValidLocation && selectedService !== "" && selectedSubService !== "" )} onClick={nearbyNurses}>
+              Terminer
+            </button>
+          </div>
       <div className="service-position w-full px-8 buttomShadow mt-12 pb-8">
         <SelectService selectedService={selectedService} setSelectedService={setSelectedService} selectedSubService={selectedSubService} setSelectedSubService={setSelectedSubService} subServices={subServices} setSubServices={setSubServices}/>
         <div className="position mt-6 w-full relative flex items-center">
@@ -78,11 +82,7 @@ const SetPosition = () => {
           <PositionOptions setUserLocation={setUserLocation} />
           </div>
 
-        <div className={`terminer w-full text-creme2 py-3 text-center ${isValidLocation && selectedService !== "" && selectedSubService !== "" ? 'bg-blueketba' : 'bg-gray-400'} rounded-[10px]`}>
-          <button disabled={!(isValidLocation && selectedService !== "" && selectedSubService !== "" )} onClick={nearbyNurses}>
-              Terminer
-            </button>
-          </div>
+        
       </div>
     
     

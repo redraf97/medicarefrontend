@@ -56,7 +56,7 @@ const NearbyNurses = () => {
 
       <div className="confirmeNurse w-full mt-5 pr-4 fixed bottom-[70px]">
         <button className={`w-full py-3 rounded-[10px] ${choosenNurseName ? 'bg-blueketba' : 'bg-gray-400'} shadow-panelShadow text-creme2`} disabled={!choosenNurseName} onClick={sendRequest}>
-          cbn n3ytolo?
+          c'est bon?
         </button>
       </div>      
     </div>

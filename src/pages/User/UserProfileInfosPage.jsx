@@ -5,8 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const UserProfileInfos = () => {
   const [user, setUser] = useState({
-    firstName: 'hamidat',
-    lastName: 'damo9ran',
+    firstName: 'zakaria',
+    lastName: 'ben venga',
     email: 'zvenga@ex.com',
     phone: '123-456-7890',
     address: 'setif'

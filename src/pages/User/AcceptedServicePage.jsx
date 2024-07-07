@@ -25,7 +25,7 @@ const AcceptedServicePage = () => {
 
   return (
     <div className='min-h-screen flex flex-col pt-12 bg-creme2'>
-      <span className='text-darkGreen4 text-[20px] font-[600] text-center flex items-center pl-4 gap-6'><FontAwesomeIcon icon={faRoad} className='text-blueketba border-1 border-blueketba p-2 w-[24px] h-[24px] rounded-50 shadow-panelShadow'/> location on map</span>
+      <span className='text-blueketba text-[20px] font-[600] text-center flex items-center pl-4 gap-6'><FontAwesomeIcon icon={faRoad} className='text-blueketba border-1 border-blueketba p-2 w-[24px] h-[24px] rounded-50 shadow-panelShadow'/> location on map</span>
 <MapContainer center={[36.194179, 5.409578]} zoom={13} style={{ height: "55vh", width: "100%",  marginTop: "10px" }}>
   <TileLayer
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

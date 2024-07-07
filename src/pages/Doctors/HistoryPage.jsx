@@ -33,7 +33,7 @@ const HistoryPage = () => {
   return (
     <DoctorLayout>
       <div className="container mx-auto p-6">
-        <h1 className="text-2xl font-bold text-darkGreen1 mb-4">Patient History</h1>
+        <h1 className="text-2xl font-bold text-blueketba mb-4">Patient History</h1>
         {patientHistory.length > 0 ? (
           patientHistory.map((patient, index) => (
             <PatientHistoryItem key={index} patient={patient} />

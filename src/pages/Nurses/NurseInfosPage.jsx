@@ -60,8 +60,8 @@ const NurseInfosPage = () => {
         <div className="text-center mb-6">
         </div>
         <div className="mt-6">
-          <h2 className="font-semibold text-blueketba text-lg">About</h2>
-          <p className="text-writingGrey text-sm mt-2">About the nurse.</p>
+          <h2 className="font-semibold text-blueketba text-lg">A prppos</h2>
+          <p className="text-writingGrey text-sm mt-2">Je m'appelle Soundous Meddah, infirmière diplômée d'État avec plus de 10 ans d'expérience dans divers environnements de soins de santé, notamment les soins intensifs, les urgences et les unités médico-chirurgicales. Titulaire d'un DEI de l'Université XYZ et certifiée en BLS et ACLS, je suis reconnue pour mes compétences cliniques, mon souci du détail et ma capacité à établir des connexions humaines avec les patients. Passionnée par l'éducation et le mentorat, j'ai été préceptrice pour de nouvelles infirmières et je suis membre active de l'Association Nationale des Infirmiers. En dehors de mon travail clinique, je fais du bénévolat dans des cliniques locales, pratique le yoga et passe du temps avec ma famille et mes amis, toujours guidée par un engagement profond envers le bien-être holistique de mes patients.</p>
         </div>
       </div>
     </div>

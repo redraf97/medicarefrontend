@@ -33,12 +33,12 @@ const EndWork = () => {
 
   return (
     <div className='flex flex-col items-center pt-24 px-3 gap-4 g-red-400 w-full flex-grow pb-[70px]'>
-      <p className="text-darkGreen1 font-[600]">thank you houssam moussaoui</p>
+      <p className="text-blueketba font-[600]">thank you houssam moussaoui</p>
 
       <div className="servicenurse flex justify-between items-center mt-6 gap-2 w-full">
         <div className="left flex items-center gap-2">
           <img src={image} className="w-[60px] rounded-20" />
-          <span className="text-darkGreen4 font-[500]">rafik zemouri</span>
+          <span className="text-blueketba font-[500]">rafik zemouri</span>
         </div>
         <span className="">500 dZD</span>
       </div>

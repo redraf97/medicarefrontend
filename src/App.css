@@ -158,22 +158,22 @@ th, td {
 .rating>input:checked~label:hover,
 .rating>input:checked~label:hover~label,
 .rating>label:hover~input:checked~label {
-  color: #1b7a8b;
+  color: #67b5de;
 }
 
 .rating:not(:checked)>label:hover,
 .rating:not(:checked)>label:hover~label {
-  color: #125460;
+  color: #67b5de;
 }
 
 .rating>input:checked~label {
-  color: #208b9e;
+  color: #67b5de;
 }
 /* end rating stars */
 
 /* Wave text loader made by: csozi | Website: english.csozi.hu*/
 .textloading {
-  color: #1b7a8b;
+  color: #67b5de;
   font-weight: bolder;
 }
 @keyframes letter {
@@ -235,7 +235,7 @@ th, td {
   right: 0;
   width: 3px;
   height: 30px;
-  background-color: #1b7a8b;
+  background-color: #67b5de;
   display: block;
   border-radius: 3px;
   transform-origin: 50% 100%;
@@ -306,17 +306,17 @@ th, td {
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 #1b7a8b;
+  box-shadow: inset 0 0 0 #67b5de;
   animation: load 2s linear infinite alternate;
 }
 
 @keyframes load {
   0% {
-    box-shadow: inset -20px 40px 0 #1b7a8b;
+    box-shadow: inset -20px 40px 0 #67b5de;
   }
 
   100% {
-    box-shadow: inset 20px -40px 0 #1b7a8b;
+    box-shadow: inset 20px -40px 0 #67b5de;
   }
 }
 /* end nurse wait for request loader*/
@@ -343,7 +343,7 @@ th, td {
 }
 
 .circular-countdown .progress {
-  stroke: #1b7a8b;
+  stroke: #67b5de;
   stroke-dasharray: 113px;
   stroke-dashoffset: 113px;
   animation: countdown 15s linear forwards;
@@ -381,9 +381,9 @@ th, td {
 }
 
 .toggle-btn {
-  top: 3px;
+  top: 800px;
   width: 75px;
-  height: 25px;
+  height: 75px;
   position: relative;
   display: inline-block;
 }
@@ -400,7 +400,7 @@ th, td {
   cursor: pointer;
   transition: all 500ms ease-in-out;
   outline: none;
-  background-color: #fff;
+  background-color: #f5f1f1;
   z-index: 1;
   overflow: hidden;
 }
@@ -411,7 +411,7 @@ th, td {
   width: 0;
   height: 100%;
   border-radius: 30px;
-  background-color: #1b7a8b;
+  background-color: #67b5de;
   left: 0;
   top: 0;
   z-index: -1;
@@ -421,8 +421,8 @@ th, td {
 .toggle-btn .toggle-text {
   position: absolute;
   width: 20px;
-  top: 2px;
-  left: 5px;
+  top: 25px;
+  left: 25px;
   transform: translateY(-15%);
   background-color: transparent;
   transition: all 300ms ease-in-out;
@@ -435,7 +435,7 @@ th, td {
   position: absolute;
   width: 100%;
   height: 100%;
-  color: #1b7a8b;
+  color: #67b5de;
   text-align: center;
   font-weight: 600;
   font-size: 14px;
@@ -457,29 +457,6 @@ th, td {
   content: "ON";
   color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

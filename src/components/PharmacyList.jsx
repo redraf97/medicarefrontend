@@ -34,7 +34,7 @@ const PharmacyList = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 bg-creme2 min-h-screen">
-      <h2 className="text-2xl font-bold text-darkGreen1 mb-4">Liste des Pharmacies</h2>
+      <h2 className="text-2xl font-bold text-blueketba mb-4">Liste des Pharmacies</h2>
       {pharmacies.map(pharmacy => (
         <PharmacyItem key={pharmacy.id} pharmacy={pharmacy} />
       ))}

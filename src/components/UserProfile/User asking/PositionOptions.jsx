@@ -27,26 +27,25 @@ const PositionOptions = ({setUserLocation}) => {
 
 
 
-
-
-
-
-
-
-
   return (
     <div className="Options w-full flex flex-col items-start">
 
-<div className={`option1 flex items-center gap-3  text-sm ${selectedOption === 'option1' ?  'text-darkGreen4' : 'text-darkGreen1'}`}>
+<div className={`option1 flex items-center gap-3  text-sm ${selectedOption === 'option1' ?  'text-blueketba' : 'text-bluefoot'}`}>
         <FontAwesomeIcon icon={faCrosshairs} className="" />
-        <button className={`text-sm ${selectedOption === 'option1' ?  'text-darkGreen3' : 'text-darkGreen1'}`} onClick={option1}>
-          Utuliser ma position
+        <button 
+          className={`w-full py-2 px-4 rounded-full text-sm ${selectedOption === 'option1' ? 'text-blueketba border-blueketba' : 'text-bluefoot border-bluefoot'} border-2 focus:outline-none`} 
+          onClick={option1}
+        >
+          Utiliser ma position
         </button>
       </div>
-      <hr className="border-t-2 border-darkGreen1 my-3 w-[95%] self-end" />
-      <div className={`option2 flex items-center gap-3  text-sm ${selectedOption === 'option2' ?  'text-darkGreen4' : 'text-darkGreen1'}`}>
+      
+      <div className={`option2 flex items-center gap-3  text-sm ${selectedOption === 'option2' ?  'text-blueketba' : 'text-bluefoot'}`}>
         <FontAwesomeIcon icon={faMap} className="" />
-      <button className={`text-sm ${selectedOption === 'option2' ?  'text-darkGreen3' : 'text-darkGreen1'}`} onClick={option2}>
+        <button 
+          className={`w-full py-2 px-4 rounded-full text-sm ${selectedOption === 'option2' ? 'text-blueketba border-blueketba' : 'text-bluefoot border-bluefoot'} border-2 focus:outline-none`} 
+          onClick={option2}
+        >
           Selectionner sur le map
         </button>
       </div>

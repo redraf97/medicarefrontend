@@ -52,15 +52,14 @@ const NurseWorkPageTop = () => {
 
 
   return (
-    <div className="top relative z-20 bg-white shadow-panelShadow rounded-br-20 rounded-bl-20 px-5 flex justify-between items-center py-2 mx-4">
-        <span className="font-[500] text-blueketba">Appointment</span>
+   
         <div ref={switchStateRef} onClick={switchStateButton}>
-        <label className="toggle-btn">
+        <label className="toggle-btn ml-40">
             <input type="checkbox"/>
             <span className="toggle-text"></span>
           </label>
         </div>
-      </div>
+      
   )
 }
 
