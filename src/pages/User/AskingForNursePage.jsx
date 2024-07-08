@@ -1,5 +1,4 @@
 import React from 'react';
-import map from '../../assets/images/map.jpg';
 import medicalPic from '../../assets/images/medicalpic4.jpg';
 import { useNavigate } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa'; // Import a plus icon from react-icons
@@ -9,7 +8,6 @@ const AskingForNurse = () => {
 
   const askNurse = () => {
     navigate("/user-set-position");
-    //localStorage.setItem('currentStep', '/User-set-position');
   }
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faNotesMedical, faCommentDots, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -28,22 +28,21 @@ const UserButtomNavBar = () => {
   ];
 
   return (
-    <div className='flex w-full justify-around items-center bg-white h-[55px] rounded-tl-20 rounded-tr-20 shadow-panelShadow fixed bottom-0 z-40'>
+    <div className='flex w-full justify-around items-center  h-[55px] rounded-tl-20 rounded-tr-20 fixed bottom-0 z-40'>
       {navLinks.map((navLink, index) => (
         <React.Fragment key={index}>
           <NavLink 
             to={navLink.path} 
             className={(navClass) => 
               navClass.isActive
-                ? 'text-blueketba text-[18px] hover:text-bluefoot h-[35px] w-[35px] flex justify-center items-center'
-                : 'text-blueketba text-[18px] hover:text-bluefoot h-[35px] w-[35px] flex justify-center items-center'
+                ? 'text-white text-[18px] hover:text-bluefoot'
+                : 'text-white text-[18px] hover:text-bluefoot'
             }
           >
-            {navLink.icon}
+            <div className='bg-blueketba rounded-full p-2'>
+              {navLink.icon}
+            </div>
           </NavLink>
-          {index < navLinks.length - 1 && (
-            <div className='border-r h-[25px] mx-2'></div>
-          )}
         </React.Fragment>
       ))}
     </div>

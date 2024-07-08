@@ -1,17 +1,16 @@
+// src/App.jsx
+import React from "react";
 import "./App.css";
 import { ToastContainer } from "react-toastify";
 import Routers from "./Routes/Routers";
-
-
-
+import { SocketProvider } from "./SocketContext";
 
 function App() {
-
   return (
-    <>
-        <ToastContainer />
-        <Routers />
-    </>
+    <SocketProvider>
+      <ToastContainer />
+      <Routers />
+    </SocketProvider>
   );
 }
 

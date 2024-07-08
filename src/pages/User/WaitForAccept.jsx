@@ -7,14 +7,17 @@ const WaitForAccept = () => {
 
   useEffect(() => {
     window.socket.on('requestAccepted', (nurseData) => { 
-    setAcceptedRequest(prev => ({ nurseData, state: true }));
+      setAcceptedRequest(prev => ({ nurseData, state: true }));
     });
-  }, []);
- 
+
+    return () => {
+      window.socket.off('requestAccepted');
+    };
+  }, [setAcceptedRequest]);
 
   return (
     <div className="bg-white p-5 shadow-panelShadow rounded-20 flex flex-col items-center gap-5">
-      <p className="text-darkGreen2 font-[600] text-[20px]">Wait for nurse to accept</p>
+      <p className="text-blueketba font-[600] text-[20px]">Wait for nurse to accept</p>
       <div className="center-body">
         <div className="loader-spanne-20">
           <span></span>

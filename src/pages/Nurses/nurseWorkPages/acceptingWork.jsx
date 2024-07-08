@@ -11,12 +11,7 @@ import { NurseDataContext } from "../../../Layout/nurse profile/NurseWorkLayout"
 import axios from "axios";
 import RejectedByUserPage from "./RejectedByUserPage";
 
-
-
-
 const AcceptingWork = () => {
-
-
   const { requestData, nurseLocation, setRequestData, setIsTaken, isTaken, isRejected, setIsRejected } = useContext(NurseDataContext);
   const navigate = useNavigate();
   if (!requestData) return <></>;
@@ -29,9 +24,6 @@ const AcceptingWork = () => {
     });
   }, []);
   
-  
-
-  // work done function
   const finish = () => { 
     axios.put("http://localhost:3000/nurses/profile/service-end",
       {},
@@ -45,17 +37,14 @@ const AcceptingWork = () => {
     });
   }
 
-
-
-
   return (
     <>
       <div className={`main bg-creme2 flex flex-col w-full min-h-screen relative `} style={ isRejected ? {filter: "blur(3px) brightness(70%)", pointerEvents: "none"} : {}}>
       <MapSection photo={ map } />
 
       <div className="bg-creme2 z-2 w-full rounded-tl-20 rounded-tr-20 shadow-panelShadow px-6 pt-4 pb-20 flex-grow relative z-20 mt-[280px]">
-        <hr className="border-t-[3px] border-darkGreen2 w-[70px] rounded-50 absolute left-[50%] translate-x-[-50%]" />
-        <p className="mt-4 text-darkGreen2 font-[700] text-center">{requestData.service}</p>
+        <hr className="border-t-[3px] border-blueketba w-[70px] rounded-50 absolute left-[50%] translate-x-[-50%]" />
+        <p className="mt-4 text-blueketba font-[700] text-center">{requestData.service}</p>
         <p className="mt-1 mb-5 text-writingGrey font-[600] text-center">{requestData.subService}</p>
         <ClientInfos name={requestData.patient} rate={requestData.patientRate}/>
         <hr className="mt-6 border-1 border-blueketba " />
@@ -90,4 +79,4 @@ const AcceptingWork = () => {
   );
 }
 
-export default AcceptingWork
+export default AcceptingWork;

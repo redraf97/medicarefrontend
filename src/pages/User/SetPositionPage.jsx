@@ -7,87 +7,66 @@ import { UserDataContext } from '../../Layout/UserLayout';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
-
-
-
 const SetPosition = () => {
-
-  const { setResStatus, setNurseList,setUserLocation,userLocation ,selectedService, setSelectedService, selectedSubService, setSelectedSubService, subServices, setSubServices, setRequestData } = useContext(UserDataContext);
+  const { setResStatus, setNurseList, setUserLocation, userLocation, selectedService, setSelectedService, selectedSubService, setSelectedSubService, subServices, setSubServices, setRequestData } = useContext(UserDataContext);
   const [isValidLocation, setIsValidLocation] = useState(false);
   const navigate = useNavigate();
 
-  //for reseting patient
+  // Resetting patient
   useEffect(() => {
     const token = localStorage.getItem('token');
-    axios.put('http://localhost:3000/patients/profile/reset-patient',
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    ).then(res => {
-     })
-    .catch(err => console.log("reseting patient err ",err));  
+    axios.put('http://localhost:3000/patients/profile/reset-patient', {}, { headers: { Authorization: `Bearer ${token}` } })
+      .then(res => { })
+      .catch(err => console.log("Reseting patient error:", err));
   }, []);
 
-  // for checking if the user location is valid
+  // Checking if the user location is valid
   useEffect(() => {
     setIsValidLocation(userLocation && userLocation.length > 0);
   }, [userLocation]);
-  
-  // for sending the request to the nearby nurses
-  const nearbyNurses = () => { 
+
+  // Sending the request to the nearby nurses
+  const nearbyNurses = () => {
     navigate("/User-result");
     const token = localStorage.getItem('token');
     axios.post('http://localhost:3000/patients/profile/nearby-nurses', {
       userLocation: userLocation,
       service: selectedService,
       subService: selectedSubService
-    }, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    }).then(res => {  
-      setResStatus(res.status);
-      setNurseList(res.data.nurseList);
-      setRequestData(res.data.requestData);
-      window.socket.emit('sendRequest', "rafik", res.data.nurseListNames, res.data.requestData)
-    }).catch(err => {
-      console.log(err);
-    })
+    }, { headers: { Authorization: `Bearer ${token}` } })
+      .then(res => {
+        setResStatus(res.status);
+        setNurseList(res.data.nurseList);
+        setRequestData(res.data.requestData);
+        window.socket.emit('sendRequest', "rafik", res.data.nurseListNames, res.data.requestData);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
-
-
 
   return (
     <div className='bg-creme2 w-full min-h-screen flex flex-col items-center pt-12'>
       <p className='text-blueketba font-[600] text-[20px]'>Demandez un infirmier</p>
-<div className={`terminer px-11 text-creme2 py-3 text-center ${isValidLocation && selectedService !== "" && selectedSubService !== "" ? 'bg-blueketba' : 'bg-gray-400'} rounded-[10px]`}>
-          <button disabled={!(isValidLocation && selectedService !== "" && selectedSubService !== "" )} onClick={nearbyNurses}>
-              Terminer
-            </button>
-          </div>
+      <div className={`terminer px-11 text-creme2 py-3 text-center ${isValidLocation && selectedService !== "" && selectedSubService !== "" ? 'bg-blueketba' : 'bg-gray-400'} rounded-[10px]`}>
+        <button disabled={!(isValidLocation && selectedService !== "" && selectedSubService !== "")} onClick={nearbyNurses}>
+          Terminer
+        </button>
+      </div>
       <div className="service-position w-full px-8 buttomShadow mt-12 pb-8">
-        <SelectService selectedService={selectedService} setSelectedService={setSelectedService} selectedSubService={selectedSubService} setSelectedSubService={setSelectedSubService} subServices={subServices} setSubServices={setSubServices}/>
+        <SelectService selectedService={selectedService} setSelectedService={setSelectedService} selectedSubService={selectedSubService} setSelectedSubService={setSelectedSubService} subServices={subServices} setSubServices={setSubServices} />
         <div className="position mt-6 w-full relative flex items-center">
-          <FontAwesomeIcon icon={faMapPin} className='absolute text-blueketba left-4'/>
-          <input type="text" placeholder='position' className='location appearance-none shadow-panelShadow rounded-20 text-sm py-2 pl-10 w-full outline-none text-blueketba focus:ring-1 focus:ring-blueketba' value={userLocation || ''}  onChange={e => {const parts = e.target.value.split(',').map(Number); setUserLocation(parts);}}/>
-        </div>  
+          <FontAwesomeIcon icon={faMapPin} className='absolute text-blueketba left-4' />
+          <input type="text" placeholder='Position' className='location appearance-none shadow-panelShadow rounded-20 text-sm py-2 pl-10 w-full outline-none text-blueketba focus:ring-1 focus:ring-blueketba' value={userLocation || ''} onChange={e => { const parts = e.target.value.split(',').map(Number); setUserLocation(parts); }} />
+        </div>
       </div>
-
       <div className="taht w-full px-8 pb-[80px] flex flex-col relative items-center gap-9 flex-1 justify-between">
-          <div className="positionOptions mt-6 w-full ">
+        <div className="positionOptions mt-6 w-full">
           <PositionOptions setUserLocation={setUserLocation} />
-          </div>
-
-        
+        </div>
       </div>
-    
-    
     </div>
-  )
+  );
 }
 
-export default SetPosition
+export default SetPosition;

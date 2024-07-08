@@ -6,7 +6,7 @@ import RecievingRequest from "./RecievingRequest";
 import WaitUserConfirmation from "./WaitUserConfirmation";
 import RejectedByUserPage from "./RejectedByUserPage";
 
-const WaitForReaquest = () => {
+const WaitForRequest = () => {
   const { setIsTaken, isTaken, setRequestData, isRejected, requestData, isPending } = useContext(NurseDataContext);
   const [isChoosen, setIsChoosen] = useState(false);
 
@@ -26,10 +26,10 @@ const WaitForReaquest = () => {
   return (
     <>
       <div
-        className={`main w-full flex-grow pt-12 px-8 flex flex-col items- ${isTaken ? 'bg-[#888888]' : ''}`}
+        className={`main w-full flex-grow px-8 flex flex-col items-center ${isTaken ? 'bg-[#fffcfc]' : ''}`}
         style={isTaken ? { filter: "blur(3px) brightness(70%)", pointerEvents: "none" } : {}}
       >
-        <div className="content flex flex-col items-center mt-20">
+        <div className="content flex flex-col items-center">
           <FontAwesomeIcon icon={faClock} className="text-blueketba text-[200px]" />
           <h1 className="text-2xl text-blueketba my-6">Waiting for Request</h1>
           <div className="loader"></div>
@@ -51,4 +51,4 @@ const WaitForReaquest = () => {
   );
 };
 
-export default WaitForReaquest;
+export default WaitForRequest;
